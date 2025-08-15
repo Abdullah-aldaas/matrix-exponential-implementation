@@ -4,6 +4,13 @@
 % all eigenvalues of A are <=0. 
 % ein eigenvalue is close to 0.
 % norm of A is ca. 10^(seed/5).
+
+% Input: 
+% - seed: Intiger for reducibility.
+% - n: Dimension of the matrix.
+% Output:
+% random matrix A with properties as above.
+
 function A = generate_mat(seed,n)
     rng(seed);
     A = rand(n,n);
@@ -26,5 +33,6 @@ function A = generate_mat(seed,n)
         A(i,i) = -s-rand();
     end
 end
-
-
+seed = 0;
+n = 6;
+A = generate_mat(seed,n)
