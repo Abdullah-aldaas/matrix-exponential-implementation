@@ -1,14 +1,7 @@
 # Matrix Exponential Implementation – Bachelor Thesis Codes (MATLAB)
 This repository contains the MATLAB codes used in my Bachelor thesis (Computing the Matrix Exponential via Scaling and Squaring with Subdiagonal Padé Approximation: Theory, Stability, and Numerical Experiments) to implement sexpm/sexpmv and generate test matrices with specific properties.
 
-## Matrix Properties:
-- **Essentially nonnegative**
-- **Diagonal dominant**
-- All eigenvalues **λ(A) ≤ 0**
-- One eigenvalue is **close to 0**
-- Matrix norm approximately **‖A‖ ≈ 10^(seed/5)**
-
-These codes were used in the numerical experiments of my bachelor thesis and the matrices were used to test the stability and efficiency of the sexpm/sexpmv method.
+These codes were used in the numerical experiments of my bachelor thesis to test the stability and efficiency of the sexpm/sexpmv method.
 
 ## How to run?
 ```matlab
