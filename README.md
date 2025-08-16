@@ -1,5 +1,5 @@
-# Random Matrix Generator – Bachelor Thesis Code (MATLAB)
-This repository contains the MATLAB code used in my Bachelor thesis (Computing the Matrix Exponential via Scaling and Squaring with Subdiagonal Padé Approximation: Theory, Stability, and Numerical Experiments) to generate test matrices with specific properties.
+# Matrix Exponential Implementation – Bachelor Thesis Codes (MATLAB)
+This repository contains the MATLAB codes used in my Bachelor thesis (Computing the Matrix Exponential via Scaling and Squaring with Subdiagonal Padé Approximation: Theory, Stability, and Numerical Experiments) to implement sexpm/sexpmv and generate test matrices with specific properties.
 
 ## Matrix Properties:
 - **Essentially nonnegative**
@@ -8,11 +8,23 @@ This repository contains the MATLAB code used in my Bachelor thesis (Computing t
 - One eigenvalue is **close to 0**
 - Matrix norm approximately **‖A‖ ≈ 10^(seed/5)**
 
-These matrices were used in my thesis to test the stability and efficiency of the sexpm/sexpmv method.
+These codes were used in the numerical experiments of my bachelor thesis and the matrices were used to test the stability and efficiency of the sexpm/sexpmv method.
 
 ## How to run?
 ```matlab
-%Example:
+% Example for computing e^A:
+A = rand(3,3);
+sexpm(A)
+```
+```matlab
+% Example for computing e^Av:
+A = rand(3,3);
+v = rand(3,1);
+sexpmv(A,v)
+```
+```matlab
+% Example for generate test matrices:
 seed = 0;
 n = 6;
-A = generate_mat(seed,n);
+A = generate_mat(seed,n)
+```
