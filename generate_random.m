@@ -1,7 +1,7 @@
 % This function generates matrix A with dimension n, that is :
 % essentially nonnegative.
 % diagonal dominant.
-% all eigenvalues of A are <=0. 
+% all eigenvalues of A are <= 0. 
 % ein eigenvalue is close to 0.
 % norm of A is ca. 10^(seed/5).
 
@@ -33,3 +33,4 @@ function A = generate_mat(seed,n)
         A(i,i) = -s-rand();
     end
 end
+
