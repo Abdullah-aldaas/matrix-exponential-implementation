@@ -33,4 +33,3 @@ function A = generate_mat(seed,n)
         A(i,i) = -s-rand();
     end
 end
-
