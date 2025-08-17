@@ -2,8 +2,8 @@
 % essentially nonnegative.
 % diagonal dominant.
 % all eigenvalues of A are <= 0. 
-% ein eigenvalue is close to 0.
-% norm of A is ca. 10^(seed/5).
+% one eigenvalue is close to 0.
+% norm of A is approximately 10^(seed/5).
 
 % Input: 
 % - seed: Intiger for reducibility.
@@ -33,3 +33,4 @@ function A = generate_mat(seed,n)
         A(i,i) = -s-rand();
     end
 end
+
