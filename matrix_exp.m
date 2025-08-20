@@ -21,7 +21,7 @@ end
 
 
 % This function computes the enumerator of the (k,m)-type Padé approximant 
-& Input: (k,m): Padé parameters
+% Input: (k,m): Padé parameters
 % Output: Polynomial p in a symbolic expression
 function p = pkm(k,m)
     syms z
@@ -34,7 +34,7 @@ function p = pkm(k,m)
 end
 
 % This function computes the denominator of the (k,m)-type Padé approximant.
-& Input: (k,m): Padé parameters
+% Input: (k,m): Padé parameters
 % Output: Polynomial q in a symbolic expression
 function q = qkm(k,m)
     syms z
@@ -112,3 +112,4 @@ function r = sexpm(A)
     r = r^(2^s)*exp(sigma);            % Squaring e^A = e^sigma*e^A_sigma
 
 end
+
