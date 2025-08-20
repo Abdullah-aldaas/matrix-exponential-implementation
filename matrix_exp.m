@@ -1,6 +1,9 @@
-% Input: norm of a matrix
-% Output: parameters s,(k,m)
-% we assume norm is larger 1
+% This function computes the scaling paramter and the Padé parameters based on the norm of the matrix
+% Input norm: norm of a matrix
+% Output: parameters: 
+% s: scaling parameter
+% k, m: Padé parameters
+% we assume norm is larger than 1
 function [s,k,m] = choose(norm)
     N = [1,200,10^4,10^6,10^9,10^11,10^12,10^14,inf];
     S = [4,4,4,3,2,2,2,1,1];
@@ -17,8 +20,9 @@ end
 
 
 
-
-%polynomials p,q in symbolic expression
+% This function computes the enumerator of the (k,m)-type Padé approximant 
+& Input: (k,m): Padé parameters
+% Output: Polynomial p in a symbolic expression
 function p = pkm(k,m)
     syms z
     p=0;
@@ -29,6 +33,9 @@ function p = pkm(k,m)
    end
 end
 
+% This function computes the denominator of the (k,m)-type Padé approximant.
+& Input: (k,m): Padé parameters
+% Output: Polynomial q in a symbolic expression
 function q = qkm(k,m)
     syms z
     q = 0;
@@ -42,7 +49,7 @@ end
 
 
 
-
+% This function computes the poles and the residues for evaluating the Padé approximant.
 % Input: (k,m)
 % Output: poles and residues 
 function [poles,residues] = parameters(k,m)
@@ -56,7 +63,7 @@ function [poles,residues] = parameters(k,m)
 end
 
 
-
+% This function computes the Padé approximant in partial fraction form.
 % Input: (k,m,A)
 % Output: r_km(A) in partial fraction form
 function r = rkm(k,m,A)
@@ -103,4 +110,5 @@ function r = sexpm(A)
     [s,k,m] =choose(no);                % Parameters dependent on the norm
     r = rkm(k,m,A_sigma/(2^s));        % Evaluation of the Padé approximant
     r = r^(2^s)*exp(sigma);            % Squaring e^A = e^sigma*e^A_sigma
+
 end
