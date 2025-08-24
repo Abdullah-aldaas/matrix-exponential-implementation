@@ -1,3 +1,18 @@
+% Input: square matrix A
+% Output: approximation of e^A using subdiagonal Padé approximant.
+function r = sexpm(A)
+    sigma = eigs(A,1,'lr');            % Estimate rightmost ev.
+    sigma = max(sigma,0);
+    A_sigma = A-sigma*eye(length(A));  % A_sigma = A-sigma*I
+    no = normest(A_sigma,0.3);          % Norm estimation
+    [s,k,m] =choose(no);                % Parameters dependent on the norm
+    r = rkm(k,m,A_sigma/(2^s));        % Evaluation of the Padé approximant
+    r = r^(2^s)*exp(sigma);            % Squaring e^A = e^sigma*e^A_sigma
+
+end
+
+
+
 % This function computes the scaling paramter and the Padé parameters based on the norm of the matrix
 % Input norm: norm of a matrix
 % Output: parameters: 
@@ -99,17 +114,4 @@ function r = rkm(k,m,A)
 end
 
 
-
-% Input: square matrix A
-% Output: approximation of e^A using subdiagonal Padé approximant.
-function r = sexpm(A)
-    sigma = eigs(A,1,'lr');            % Estimate rightmost ev.
-    sigma = max(sigma,0);
-    A_sigma = A-sigma*eye(length(A));  % A_sigma = A-sigma*I
-    no = normest(A_sigma,0.3);          % Norm estimation
-    [s,k,m] =choose(no);                % Parameters dependent on the norm
-    r = rkm(k,m,A_sigma/(2^s));        % Evaluation of the Padé approximant
-    r = r^(2^s)*exp(sigma);            % Squaring e^A = e^sigma*e^A_sigma
-
-end
 
