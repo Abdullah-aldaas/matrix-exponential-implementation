@@ -3,7 +3,7 @@
 % diagonal dominant.
 % all eigenvalues of A are <= 0. 
 % one eigenvalue is close to 0.
-% norm of A is approximately 10^(seed/5).
+% norm of A is approximately 10^(seed/6).
 
 % Input: 
 % - seed: Intiger for reducibility.
@@ -14,7 +14,7 @@
 function A = generate_mat(seed,n)
     rng(seed);
     A = rand(n,n);
-    A = 10^(seed/5)*A/norm(A);
+    A = 10^(seed/6)*A/norm(A);
     A = abs(A);
     
     % this is to ensure there is an eigenvalue close to 0.
@@ -33,4 +33,5 @@ function A = generate_mat(seed,n)
         A(i,i) = -s-rand();
     end
 end
+
 
