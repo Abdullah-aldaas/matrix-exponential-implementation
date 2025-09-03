@@ -19,5 +19,5 @@ sexpmv(A,v)
 % Example for generate test matrices:
 seed = 0;
 n = 6;
-A = generate_mat(seed,n)
+A = generate_random(seed,n)
 ```
