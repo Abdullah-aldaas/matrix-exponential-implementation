@@ -123,8 +123,3 @@ function r = rkm(k,m,A)
     end
     
 end
-
-
-
-
-
