@@ -104,7 +104,7 @@ semilogy(X_axis,e_er,'s', Markersize= 10, linewidth=2, ...
     MarkerEdgeColor='g')
 semilogy(X_axis,kx,'b--')
 semilogy(X_axis, cond_exp,'black', LineWidth=1.5)
-legend('sexpm','expm','$u\kappa_2(X)\|\mathbf{A}\|$', 'Interpreter', 'latex','Location','southeast', 'fontsize', 13)
+legend('sexpm','expm','$u\kappa_2(X)\|\mathbf{A}\|$', 'Interpreter', 'latex','Location','northwest', 'fontsize', 13)
 yticks([1e-15 1e-10 1e-5 1e0])
 yticklabels({'10^{-15}', '10^{-10}', '10^{-5}', '10^{0}'})
 ylim([1e-15,1e0])
@@ -123,3 +123,4 @@ legend('sexpm','expm','location','northwest', 'fontsize', 13)
 xlabel('seed')
 ylabel('flops/$n^3$','Interpreter', 'latex')
 pbaspect([1.5,1,1])
+
